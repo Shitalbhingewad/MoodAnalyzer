@@ -15,7 +15,7 @@ public class MoodAnalyzerTest{
     public void given_Happy_Mood_should_Return_Happy()
     {
     	MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain();
-        String mood = moodAnalyzer.analyseMood("I am In A HAPPY Mood");
-        assertEquals("HAPPY", mood); 
+        String mood = moodAnalyzer.analyseMood("I am In A SAD Mood");
+        assertEquals("SAD", mood); 
     }
 }
