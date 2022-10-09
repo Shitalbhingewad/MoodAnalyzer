@@ -1,5 +1,7 @@
 package com.MoodAnalyzer;
 
+
+
 public class MoodAnalysisException  extends Exception{
 
     public Exception_Type type;
