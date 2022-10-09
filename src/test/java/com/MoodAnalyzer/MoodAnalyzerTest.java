@@ -12,25 +12,13 @@ import org.junit.Test;
 public class MoodAnalyzerTest {
     //Test case for Sad mood
     @Test
-    public void given_SadMood_Should_Return_SAD() {
-        MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain("I am In Sad Mood");
-        String mood = moodAnalyzer.analyseMood();
-        assertSame("SAD", mood);
-
-    }
-
-    // Test case for Happy mood
-
-    @Test
-    public void given_AnyMood_Should_Return_HAPPY() {
-        MoodAnalyzerMain moodAnalyser = new MoodAnalyzerMain("I am In Happy Mood");
-        String mood = moodAnalyser.analyseMood();
-        assertSame("HAPPY", mood);
-    }
-    @Test
-    public void given_NULLMood_Should_Return_HAPPY() {
+    public void given_NullMood_Should_Throw_MoodAnalysisException() {
         MoodAnalyzerMain moodAnalyser = new MoodAnalyzerMain(null);
-        String mood = moodAnalyser.analyseMood();
-        assertSame("HAPPY", mood);
+        String mood;
+        try {
+            mood = moodAnalyser.analyseMood();
+        } catch (MoodAnalysisException e) {
+            assertEquals(MoodAnalysisException.Exception_Type.NULL,e.type);
+        }
     }
 }
